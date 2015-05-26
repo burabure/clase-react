@@ -5,9 +5,7 @@ class TweetList extends React.Component {
     return (
       <ul className="tweetList">
         <h1>TweetList</h1>
-
-        {console.log(this)}
-        
+        // Armar un componente para mostar los tweets
       </ul>
     );
   }
