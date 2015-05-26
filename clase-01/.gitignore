@@ -3,3 +3,4 @@ css/*.css
 js/bundle.js
 scss/**/*.map
 css/**/*.map
+*.log
