@@ -46,7 +46,7 @@ y pueden encontrar la app corriendo en *http://localhost:3000*
 - [(video) Bill Fisher, Facebook: React and Flux](https://www.youtube.com/watch?v=Bic_sFiaNDI)
 - [The case for Flux](https://medium.com/@dan_abramov/the-case-for-flux-379b7d1982c6)
 
-## GraphQl + Relay
+### GraphQl + Relay
 - [Introducing Relay and GraphQL](https://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html)
 - [GraphQl Introduction](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html)
 - [Una implementacion no oficial en Ruby](http://graphql-ruby-demo.herokuapp.com/)
