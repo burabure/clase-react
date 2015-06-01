@@ -19,11 +19,16 @@ npm install
 npm start
 
 ```
-
 y pueden encontrar la app corriendo en http://localhost:3000
+( las apps estan corriendo con WebPack y webpack-dev-server )
 
 
-PD: las apps estan corriendo con WebPack y webpack-dev-server
+### Clase-01
+ Completar el codigo necesario en src/components/TweetList.jsx
+
+### Clase-02
+ Completar el codigo necesario en src/components/App.jsx y SearchControls.jsx
+
 
 
 # Referencias
