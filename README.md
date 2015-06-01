@@ -1,12 +1,14 @@
 # clase-react
 Material Clase React
 
-[Video Clase-01](https://youtu.be/8zNZbx6ioDk?t=7m30s)
+### Clase 01
+[Video](https://youtu.be/8zNZbx6ioDk?t=7m30s)
 
-[Slides Clase-01](https://docs.google.com/presentation/d/1R_pRAPcVZTxdt4IzENRUS0kptGPRo_S1hysABGHm5Zg/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1R_pRAPcVZTxdt4IzENRUS0kptGPRo_S1hysABGHm5Zg/edit?usp=sharing)
 
 
-# Instrucciones
+
+# Instrucciones Ejercicos
 en los directorios de las clases (clase-xx) encontaran un ejercicio para completar. en la rama (branch) "soluciones" pueden encontrar el codigo final.
 
 para correr el servidor con el codigo:
