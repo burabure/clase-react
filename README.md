@@ -1,7 +1,7 @@
 # clase-react
 Material Clase React
 
-[Video Clase-01](https://www.youtube.com/watch?v=8zNZbx6ioDk&feature=youtu.be)
+[Video Clase-01](https://youtu.be/8zNZbx6ioDk?t=7m30s)
 [Slides Clase-01](https://docs.google.com/presentation/d/1R_pRAPcVZTxdt4IzENRUS0kptGPRo_S1hysABGHm5Zg/edit?usp=sharing)
 
 
