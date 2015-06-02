@@ -3,13 +3,15 @@ const TweetsActions = require('../actions/TweetsActions');
 
 class SearchControls extends React.Component {
   render() {
+
     const queryHistory =
       this.props.queryHistory ?
         this.props.queryHistory
-          .map(query =>
+          .map( log =>
             <button
-              onClick={this._handleSelectHistory.bind(this, query)} >
-              {query}
+              key     = {log.id}
+              onClick = {this._handleSelectHistory.bind(this, log.id)} >
+              {log.searchQuery}
             </button>
           ) : false;
 
@@ -39,21 +41,31 @@ class SearchControls extends React.Component {
       // --> lanzar la accion correspondiente con el inputField.value
       TweetsActions
         .query(inputField.value)
+<<<<<<< Updated upstream
         .then( () => // Limpiar el input si no escribieron nada nuevo
           this.props.currentQuery === inputField.value ?
             inputField.value = "" :
             false
         );
+=======
+        .then( () =>
+          this.props.currentQuery === inputField.value ?
+            inputField.value = "" : false );
+>>>>>>> Stashed changes
     }
   }
 
   /**
    * Event handler for Select History on UI
-   * @param {string} historic search query
+   * @param {string} historic search query id
    */
-  _handleSelectHistory(query) {
+  _handleSelectHistory(id) {
       // --> lanzar la accion correspondiente
+<<<<<<< Updated upstream
       TweetsActions.queryFromHistory(query);
+=======
+      TweetsActions.queryFromHistory(id);
+>>>>>>> Stashed changes
   }
 }
 
