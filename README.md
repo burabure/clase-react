@@ -7,6 +7,12 @@ Material Clase React
 [Slides](https://docs.google.com/presentation/d/1R_pRAPcVZTxdt4IzENRUS0kptGPRo_S1hysABGHm5Zg/edit?usp=sharing)
 
 
+### Clase 02
+[Video](https://youtu.be/nl89wj1NNOU?t=2m9s)
+
+[Slides](https://docs.google.com/presentation/d/1AutUzLUKGIOR90_VlUj8NSnJvYwlQN_NKodcJ9btZt8/edit?usp=sharing)
+
+
 
 # Instrucciones Ejercicos
 en los directorios de las clases (clase-xx) encontaran un ejercicio para completar. en la rama (branch) "soluciones" pueden encontrar el codigo final.
