@@ -5,37 +5,29 @@ const EventEmitter = require('events').EventEmitter;
 
 const CHANGE_EVENT = 'change';
 
-/* State Variables */
+/* Variables de Estado */
 let _history      = [];
 let _tweets       = [];
 let _currentQuery = [];
 
 
 /**
- * @param {Array} List of history objects
- * @return {Array} List of historic queries
- */
-function _getQueryHistory(history) {
-  return history.map( x => x.searchQuery );
-}
-
-/**
- * @param {String} searchQuery from history
+ * @param {String} searchQuery id from history
  * @param {Array} List of history objects
  * @return {Array} List of Tweets
  */
-function _getTweetsFromHistory(query, history) {
-  const record = history.find( x => x.searchQuery === query );
-  return record ? record.tweets : [];
+function _getRecordFromHistory(id, history) {
+  const record = history.find( x => x.id === id );
+  return record ? record : [];
 }
 
 
-var TweetsStore = Object.assign({}, EventEmitter.prototype, {
+const TweetsStore = Object.assign({}, EventEmitter.prototype, {
 
   getState: function() {
     return {
       tweets      : _tweets,
-      queryHistory: _getQueryHistory(_history),
+      queryHistory: _history,
       currentQuery: _currentQuery
     };
   },
@@ -69,6 +61,7 @@ AppDispatcher.register(action => {
 
     case TweetsConstants.QUERY:
       _history.push({
+        id         : new Date().getTime(),
         searchQuery: action.query,
         tweets     : action.tweets
       });
@@ -80,8 +73,9 @@ AppDispatcher.register(action => {
       break;
 
     case TweetsConstants.QUERY_FROM_HISTORY:
-      _tweets = _getTweetsFromHistory(action.query, _history);
-      _currentQuery = action.query;
+      const record = _getRecordFromHistory(action.id, _history);
+      _tweets = record.tweets;
+      _currentQuery = record.searchQuery;
 
       TweetsStore.emitChange();
       break;

@@ -1,15 +1,17 @@
 const React = require('react');
-//const TweetsActions = require('../actions/TweetsActions');
+const TweetsActions = require('../actions/TweetsActions');
 
 class SearchControls extends React.Component {
   render() {
+
     const queryHistory =
       this.props.queryHistory ?
         this.props.queryHistory
-          .map(query =>
+          .map( log =>
             <button
-              onClick={this._handleSelectHistory.bind(this, query)} >
-              {query}
+              key     = {log.id}
+              onClick = {this._handleSelectHistory.bind(this, log.id)} >
+              {log.searchQuery}
             </button>
           ) : false;
 
@@ -37,17 +39,15 @@ class SearchControls extends React.Component {
     if(event.which === 13) {
       const inputField = event.target;
       // --> lanzar la accion correspondiente con el inputField.value
-
     }
   }
 
   /**
    * Event handler for Select History on UI
-   * @param {string} historic search query
+   * @param {string} historic search query id
    */
-  _handleSelectHistory(query) {
-      // --> lanzar la accion correspondiente
-
+  _handleSelectHistory(id) {
+    // --> lanzar la accion correspondiente
   }
 }
 

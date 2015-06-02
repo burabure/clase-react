@@ -24,8 +24,8 @@ module.exports = {
               exclude: /(node_modules|bower_components)/,
               loaders: ['react-hot', 'babel']
             }, {
-              test: /\.json$/,
-              loader: 'json',
+              test   : /\.json$/,
+              loader : 'json',
               include: path.join(__dirname, 'src')
             }
         ]

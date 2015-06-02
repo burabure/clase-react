@@ -20,12 +20,13 @@ const TweetsActions = {
   },
 
   /**
-   * @param {string} The search query
+   * @param {string} The search query id
+   * @return {object} action containing fetched tweets
    */
-  queryFromHistory: function(query) {
+  queryFromHistory: function(id) {
     AppDispatcher.dispatch({
       actionType: TweetsConstants.QUERY_FROM_HISTORY,
-      query     : query
+      id        : id
     });
   }
 

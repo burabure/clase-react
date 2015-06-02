@@ -1,7 +1,7 @@
 const React = require('react');
 const TweetList = require('./TweetList.jsx');
 const SearchControls = require('./SearchControls.jsx');
-//const TweetsStore = require('../stores/TweetsStore');
+const TweetsStore = require('../stores/TweetsStore');
 
 
 class App extends React.Component {
@@ -17,12 +17,10 @@ class App extends React.Component {
 
   componentDidMount() {
     // --> subscribir a cambios en TweetsStore y manejarlos con _onChange!
-
   }
 
   componentWillUnmount() {
     // --> de-subscribir a cambios en TweetsStore aqui!
-
   }
 
   render() {
@@ -43,7 +41,6 @@ class App extends React.Component {
    */
   _onChange() {
     // --> setear el estado que me empuja TweetsStore
-
   }
 }
 
