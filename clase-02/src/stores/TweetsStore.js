@@ -12,21 +12,13 @@ let _currentQuery = [];
 
 
 /**
- * @param {Array} List of history objects
- * @return {Array} List of historic queries
- */
-function _getQueryHistory(history) {
-  return history.map( x => x );
-}
-
-/**
  * @param {String} searchQuery id from history
  * @param {Array} List of history objects
  * @return {Array} List of Tweets
  */
-function _getTweetsFromHistory(id, history) {
+function _getRecordFromHistory(id, history) {
   const record = history.find( x => x.id === id );
-  return record ? record.tweets : [];
+  return record ? record : [];
 }
 
 
@@ -35,7 +27,7 @@ const TweetsStore = Object.assign({}, EventEmitter.prototype, {
   getState: function() {
     return {
       tweets      : _tweets,
-      queryHistory: _getQueryHistory(_history),
+      queryHistory: _history,
       currentQuery: _currentQuery
     };
   },
@@ -81,8 +73,9 @@ AppDispatcher.register(action => {
       break;
 
     case TweetsConstants.QUERY_FROM_HISTORY:
-      _tweets = _getTweetsFromHistory(action.id, _history);
-      _currentQuery = action.query;
+      const record = _getRecordFromHistory(action.id, _history);
+      _tweets = record.tweets;
+      _currentQuery = record.searchQuery;
 
       TweetsStore.emitChange();
       break;

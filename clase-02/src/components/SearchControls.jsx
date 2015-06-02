@@ -41,17 +41,11 @@ class SearchControls extends React.Component {
       // --> lanzar la accion correspondiente con el inputField.value
       TweetsActions
         .query(inputField.value)
-<<<<<<< Updated upstream
         .then( () => // Limpiar el input si no escribieron nada nuevo
           this.props.currentQuery === inputField.value ?
             inputField.value = "" :
             false
         );
-=======
-        .then( () =>
-          this.props.currentQuery === inputField.value ?
-            inputField.value = "" : false );
->>>>>>> Stashed changes
     }
   }
 
@@ -60,12 +54,8 @@ class SearchControls extends React.Component {
    * @param {string} historic search query id
    */
   _handleSelectHistory(id) {
-      // --> lanzar la accion correspondiente
-<<<<<<< Updated upstream
-      TweetsActions.queryFromHistory(query);
-=======
-      TweetsActions.queryFromHistory(id);
->>>>>>> Stashed changes
+    // --> lanzar la accion correspondiente
+    TweetsActions.queryFromHistory(id);
   }
 }
 

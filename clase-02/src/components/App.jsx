@@ -32,8 +32,8 @@ class App extends React.Component {
           currentQuery = {this.state.currentQuery}
           queryHistory = {this.state.queryHistory} />
         <TweetList
-          query = {this.state.currentQuery}
-          tweets= {this.state.tweets} />
+          query  = {this.state.currentQuery}
+          tweets = {this.state.tweets} />
       </div>
     );
   }
