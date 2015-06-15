@@ -1,88 +1,60 @@
-const AppDispatcher = require('../dispatcher/AppDispatcher');
-const TweetsConstants = require('../constants/TweetsConstants');
-const EventEmitter = require('events').EventEmitter;
+const Store = require('flummox').Store;
+const Immutable = require('immutable');
 
 
-const CHANGE_EVENT = 'change';
+class TweetsStore extends Store {
 
-/* Variables de Estado */
-let _history      = [];
-let _tweets       = [];
-let _currentQuery = [];
+  constructor(flux) {
+    super();
+    const tweetsActions = flux.getActionIds('tweets');
 
+    /* Registrar Handlers para acciones */
+    this.registerAsync(
+      tweetsActions.query,
+      x => console.log('Begin: ', x),
+      this._handleQuery,
+      x => console.log('ERROR: ', x));
 
-/**
- * @param {String} searchQuery id from history
- * @param {Array} List of history objects
- * @return {Array} List of Tweets
- */
-function _getRecordFromHistory(id, history) {
-  const record = history.find( x => x.id === id );
-  return record ? record : [];
-}
+    this.register(tweetsActions.queryFromHistory, this._handleQueryFromHistory);
 
 
-const TweetsStore = Object.assign({}, EventEmitter.prototype, {
 
-  getState: function() {
-    return {
-      tweets      : _tweets,
-      queryHistory: _history,
-      currentQuery: _currentQuery
+    /* El estado */
+    this.state = {
+      tweets      : [],
+      queryHistory: Immutable.List(),
+      currentQuery: ''
     };
-  },
-
-  /**
-   * Change emmiter
-   */
-  emitChange: function() {
-    this.emit(CHANGE_EVENT);
-  },
-
-  /**
-   * @param {function} callback
-   */
-  addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
-  },
-
-  /**
-   * @param {function} callback
-   */
-  removeChangeListener: function(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
   }
-});
 
 
-// Register callback to handle all updates
-AppDispatcher.register(action => {
-  switch(action.actionType) {
+  _handleQuery({query, tweets}) {
+    const id = new Date().getTime();
 
-    case TweetsConstants.QUERY:
-      _history.push({
-        id         : new Date().getTime(),
-        searchQuery: action.query,
-        tweets     : action.tweets
-      });
+    const history =
+      this.state.queryHistory
+        .push({
+          id         : id,
+          searchQuery: query,
+          tweets     : tweets
+        });
 
-      _tweets = action.tweets;
-      _currentQuery = action.query;
-
-      TweetsStore.emitChange();
-      break;
-
-    case TweetsConstants.QUERY_FROM_HISTORY:
-      const record = _getRecordFromHistory(action.id, _history);
-      _tweets = record.tweets;
-      _currentQuery = record.searchQuery;
-
-      TweetsStore.emitChange();
-      break;
-
-    default:
-      // no op
+    this.setState({
+      tweets      : tweets,
+      queryHistory: history,
+      currentQuery: query
+    });
   }
-});
+
+
+  _handleQueryFromHistory(id) {
+    const record = this.state.queryHistory.find(x => x.id === id);
+
+    this.setState({
+      tweets      : record.tweets,
+      currentQuery: record.searchQuery
+    });
+  }
+}
 
 module.exports = TweetsStore;

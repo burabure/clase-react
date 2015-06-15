@@ -1,5 +1,4 @@
 const React = require('react');
-const TweetsActions = require('../actions/TweetsActions');
 
 class SearchControls extends React.Component {
   render() {
@@ -22,7 +21,7 @@ class SearchControls extends React.Component {
           placeholder="Buscar Tweets"
           onKeyPress={this._handleSearch.bind(this)} />
 
-        {this.props.queryHistory.length > 0 ?
+        {this.props.queryHistory.size > 0 ?
           " - historia: " :
           false
         }
@@ -38,8 +37,9 @@ class SearchControls extends React.Component {
   _handleSearch(event) {
     if(event.which === 13) {
       const inputField = event.target;
-      // --> lanzar la accion correspondiente con el inputField.value
-      TweetsActions
+
+      this.context.flux
+        .getActions('tweets')
         .query(inputField.value)
         .then( () => // Limpiar el input si no escribieron nada nuevo
           this.props.currentQuery === inputField.value ?
@@ -54,9 +54,15 @@ class SearchControls extends React.Component {
    * @param {string} historic search query id
    */
   _handleSelectHistory(id) {
-    // --> lanzar la accion correspondiente
-    TweetsActions.queryFromHistory(id);
+    this.context.flux
+      .getActions('tweets')
+      .queryFromHistory(id);
   }
 }
+
+/* Context */
+SearchControls.contextTypes = {
+  flux: React.PropTypes.object
+};
 
 module.exports = SearchControls;

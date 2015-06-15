@@ -3,7 +3,6 @@ const Tweet = require('./Tweet.jsx');
 
 class TweetList extends React.Component {
   render() {
-
     const tweets =
       this.props.tweets ?
         this.props.tweets

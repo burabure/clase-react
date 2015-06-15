@@ -8,9 +8,10 @@
   "author": "Nicolas 'BuraBure' Fernandez <nicolas@santiagolab.cl> (http://github.com/burabure)",
   "license": "MIT",
   "dependencies": {
+    "flummox": "^3.5.2",
     "flux": "^2.0.3",
-    "immutable": "^3.7.3",
     "parallelshell": "^1.1.1",
+    "immutable": "^3.7.3",
     "twitter": "^1.2.5"
   },
   "devDependencies": {
