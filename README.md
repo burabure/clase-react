@@ -13,6 +13,10 @@ Material Clase React
 [Slides](https://docs.google.com/presentation/d/1AutUzLUKGIOR90_VlUj8NSnJvYwlQN_NKodcJ9btZt8/edit?usp=sharing)
 
 
+### Clase 03
+[Video](https://youtu.be/5UbuGybPs5k)
+
+
 
 # Instrucciones Ejercicos
 en los directorios de las clases (clase-xx) encontaran un ejercicio para completar. en la rama (branch) "soluciones" pueden encontrar el codigo final.
@@ -39,6 +43,10 @@ y pueden encontrar la app corriendo en *http://localhost:3000*
 ### Clase-02
  Completar el codigo necesario en src/components/App.jsx y SearchControls.jsx
 
+### Clase-03
+ Aplicacion con Flummox para un Flux menos verboso y componentes con dependencias mas declarativas.
+ No hay ejercicios, la idea es ue jueguen con la app ;D
+
 
 
 # Referencias
@@ -53,6 +61,12 @@ y pueden encontrar la app corriendo en *http://localhost:3000*
 - [Flux](https://facebook.github.io/flux/)
 - [(video) Bill Fisher, Facebook: React and Flux](https://www.youtube.com/watch?v=Bic_sFiaNDI)
 - [The case for Flux](https://medium.com/@dan_abramov/the-case-for-flux-379b7d1982c6)
+
+### Flummox
+- [Flummox](https://github.com/acdlite/flummox)
+
+### ImmutableJS
+- [ImmutableJS](https://github.com/facebook/immutable-js)
 
 ### GraphQl + Relay
 - [Introducing Relay and GraphQL](https://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html)
