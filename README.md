@@ -68,6 +68,9 @@ y pueden encontrar la app corriendo en *http://localhost:3000*
 ### ImmutableJS
 - [ImmutableJS](https://github.com/facebook/immutable-js)
 
+### Redux
+- [redux](https://github.com/gaearon/redux)
+
 ### GraphQl + Relay
 - [Introducing Relay and GraphQL](https://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html)
 - [GraphQl Introduction](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html)
@@ -80,3 +83,7 @@ y pueden encontrar la app corriendo en *http://localhost:3000*
 ### Anexos
 - [The two pillars of JavaScript PT1](https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3)
 - [The two pillars of JavaScript PT2](https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4)
+
+#### Ramda
+- [Ramda](http://ramdajs.com/)
+- [Introduccion a Ramda](http://output.jsbin.com/desido)
